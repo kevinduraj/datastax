@@ -4,6 +4,7 @@ export NODE_NUMBER=0
 export PASSWORD='password'
 export EMAIL='kduraj%40gmail.com'
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
+OPSCENTER='172.30.0.125'
 #----------------------------------------------------------------------------------------------------------#
 declare -a node3=('-9223372036854775808', 
                   '-3074457345618258603', 
@@ -22,8 +23,20 @@ data_center='DC1'
 seeds="172.30.0.125,172.30.0.126,172.30.0.127,172.30.0.128,172.30.0.129"
 
 #----------------------------------------------------------------------------------------------------------#
+# DataStax Community 
+#----------------------------------------------------------------------------------------------------------#
+# rm -f /etc/yum.repos.d/datastax*
+# /bin/cat <<EOM > /etc/yum.repos.d/datastax.repo
+# [datastax]
+# name = DataStax Repo for Apache Cassandra
+# baseurl = http://rpm.datastax.com/community
+# enabled = 1
+# gpgcheck = 0
+# EOM
+#----------------------------------------------------------------------------------------------------------#
+# DataStax Enterprise
+#----------------------------------------------------------------------------------------------------------#
 rm -f /etc/yum.repos.d/datastax*
-
 /bin/cat <<EOM > /etc/yum.repos.d/datastax.repo
 [datastax]
 name = DataStax Repo for DataStax Enterprise
@@ -36,6 +49,9 @@ EOM
 #----------------------------------------------------------------------------------------------------------#
 yum -y upgrade
 yum -y install dse-full
+yum -y install datastax-agent
+# echo "stomp_interface: 172.30.0.125 | sudo tee -a /var/lib/datastax-agent/conf/address.yaml
+echo "stomp_interface: ${OPSCENTER}" | sudo tee -a /var/lib/datastax-agent/conf/address.yaml
 
 #----------------------------------------------------------------------------------------------------------#
 # Memory: https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html
