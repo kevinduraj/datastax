@@ -1,5 +1,5 @@
-DataStax Solr
-=============
+Solr - Performance limited up to 100 million documents
+======================================================
 
 ## Build Schema and Index
 
