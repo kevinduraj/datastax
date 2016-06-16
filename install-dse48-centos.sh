@@ -49,7 +49,7 @@ EOM
 #----------------------------------------------------------------------------------------------------------#
 yum -y upgrade
 yum -y install dse-full
-yum -y install datastax-agent
+# yum -y install datastax-agent
 # echo "stomp_interface: 172.30.0.125" | tee -a /var/lib/datastax-agent/conf/address.yaml
 echo "stomp_interface: ${OPSCENTER}" | tee -a /var/lib/datastax-agent/conf/address.yaml
 
