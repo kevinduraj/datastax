@@ -1,5 +1,5 @@
-Solr - Performance is limited up to 100 million documents
-=========================================================
+Solr - Performance is limited up to 100 million of documents
+============================================================
 
 ## Build Schema and Index
 
