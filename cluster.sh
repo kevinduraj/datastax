@@ -3,11 +3,11 @@
 ACTION='stop'
 #---------------------------------------------------------#
 if [ $# -eq 0 ]; then
-   echo "Stopping cluster"
-   sleep 1
-else 
    echo "Starting cluster"
    ACTION='start'
+   sleep 1
+else 
+   echo "Cluster ${ACTION}"
    sleep 1;
 
 fi
