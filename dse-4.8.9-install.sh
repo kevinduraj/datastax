@@ -85,3 +85,7 @@ alias log1='tail -100f /var/log/cassandra/output.log'
 alias log2='tail -100f /var/log/cassandra/system.log'
 EOM
 #----------------------------------------------------------------------------------------------------------#
+# Start All Services
+#----------------------------------------------------------------------------------------------------------#
+service dse start
+service datastax-agent start
