@@ -33,3 +33,4 @@ rm -f /etc/rc.d/rc5.d/S50dse /etc/rc.d/rc5.d/S80datastax-agent /etc/rc.d/rc5.d/S
 rm -f /etc/rc.d/rc6.d/K50dse /etc/rc.d/rc6.d/K05datastax-agent /etc/rc.d/rc6.d/K05opscenterd
 #-------------------------------------------------------------------------------------------#
 rm -fR /var/cache/yum/x86_64/7/datastax
+updatedb &
