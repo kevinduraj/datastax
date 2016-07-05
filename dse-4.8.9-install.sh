@@ -1,8 +1,11 @@
 #!/bin/bash
 #----------------------------------------------------------------------------------------------------------#
+# Customize Node Number and password 
+#----------------------------------------------------------------------------------------------------------#
 NODE=1
-export NODE_RING=`expr $NODE - 1`
 export PASSWORD='password'
+#----------------------------------------------------------------------------------------------------------#
+export NODE_RING=`expr $NODE - 1`
 export EMAIL='kduraj%40gmail.com'
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
 OPSCENTER='172.30.0.125'
