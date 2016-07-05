@@ -55,7 +55,7 @@ enabled=1
 gpgcheck=0
 EOM
 #----------------------------------------------------------------------------------------------------------#
-# Installation:
+# Cassandra Full Installation:
 #----------------------------------------------------------------------------------------------------------#
 yum -y install dse-full-4.8.9-1
 echo "stomp_interface: ${OPSCENTER}" | tee -a /var/lib/datastax-agent/conf/address.yaml
