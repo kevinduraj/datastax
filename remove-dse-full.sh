@@ -22,7 +22,7 @@ rm -f /etc/yum.repos.d/datastax.repo
 #-------------------------------------------------------------------------------------------#
 # Remove Services for DSE 5.0
 #-------------------------------------------------------------------------------------------#
-rm -f /etc/rc.d/rc0.d/K05datastax-agent /etc/rc.d/rc0.d/K05opscenterd
+rm -f /etc/rc.d/rc0.d/K50dse /etc/rc.d/rc0.d/K05datastax-agent /etc/rc.d/rc0.d/K05opscenterd
 rm -f /etc/rc.d/rc1.d/K50dse /etc/rc.d/rc1.d/K05datastax-agent /etc/rc.d/rc1.d/K05opscenterd
 rm -f /etc/rc.d/rc2.d/S50dse /etc/rc.d/rc2.d/S80datastax-agent /etc/rc.d/rc2.d/S80opscenterd
 rm -f /etc/rc.d/rc3.d/S50dse /etc/rc.d/rc3.d/S80datastax-agent /etc/rc.d/rc3.d/S80opscenterd
