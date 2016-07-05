@@ -76,7 +76,9 @@ chown -R cassandra:cassandra /var/lib/cassandra
 # Add Cassanra Aliases
 #----------------------------------------------------------------------------------------------------------#
 cat <<EOM >> ~/.bash_aliases
-alias cqlsh='cqlsh $(hostname -I)'
-alias log='tail -50f /var/log/cassandra/output.log'
+alias vi='vim'
+alias cqlsh='cqlsh $(hostname -I)'                                                                                                                                                                                               
+alias log1='tail -100f /var/log/cassandra/output.log'
+alias log2='tail -100f /var/log/cassandra/system.log'
 EOM
 #----------------------------------------------------------------------------------------------------------#
