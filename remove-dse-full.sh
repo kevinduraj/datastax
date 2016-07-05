@@ -1,8 +1,12 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------#
-service dse stop
+# Stop DataStax Service
 #-------------------------------------------------------------------------------------------#
-yum -y remove dse
+service dse stop
+rpm -qa | grep dse
+yum remove dse*
+#-------------------------------------------------------------------------------------------#
+rpm -qa | grep dse
 rm -fR /etc/dse
 rm -fR /usr/share/dse
 rm -f /etc/default/dse*
