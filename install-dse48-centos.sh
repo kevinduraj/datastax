@@ -1,6 +1,7 @@
 #!/bin/bash
 #----------------------------------------------------------------------------------------------------------#
-export NODE_NUMBER=0                                                                                                                                                                                                                    
+NODE=1
+export NODE_RING=`expr $NODE - 1`
 export PASSWORD='password'
 export EMAIL='kduraj%40gmail.com'
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
@@ -63,7 +64,7 @@ sed -i 's/#HEAP_NEWSIZE="800M"/HEAP_NEWSIZE="1G"/' /etc/dse/cassandra/cassandra-
 #----------------------------------------------------------------------------------------------------------#
 sed -i 's/SPARK_ENABLED=0/SPARK_ENABLED=1/' /etc/default/dse
 sed -i "s/Test Cluster/$cluster/" /etc/dse/cassandra/cassandra.yaml
-token=${node5[$NODE_NUMBER]}
+token=${node5[$NODE_RING]}
 sed -i "s/# initial_token:/initial_token: $token/" /etc/dse/cassandra/cassandra.yaml
 sed -i "s/127.0.0.1/$seeds/" /etc/dse/cassandra/cassandra.yaml
 sed -i 's/com.datastax.bdp.snitch.DseSimpleSnitch/GossipingPropertyFileSnitch/' /etc/dse/cassandra/cassandra.yaml
