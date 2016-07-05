@@ -3,8 +3,8 @@
 # Stop DataStax Service
 #-------------------------------------------------------------------------------------------#
 service dse stop
-rpm -qa | grep dse
-yum remove dse*
+rpm -qa | grep dse | xargs yum -y remove
+yum -y autoremove
 #-------------------------------------------------------------------------------------------#
 rpm -qa | grep dse
 rm -fR /etc/dse
