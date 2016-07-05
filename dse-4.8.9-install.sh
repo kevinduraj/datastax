@@ -58,8 +58,6 @@ EOM
 # Installation:
 #----------------------------------------------------------------------------------------------------------#
 yum -y install dse-full-4.8.9-1
-# yum -y install datastax-agent
-# echo "stomp_interface: 172.30.0.125" | tee -a /var/lib/datastax-agent/conf/address.yaml
 echo "stomp_interface: ${OPSCENTER}" | tee -a /var/lib/datastax-agent/conf/address.yaml
 
 #----------------------------------------------------------------------------------------------------------#
@@ -67,6 +65,7 @@ echo "stomp_interface: ${OPSCENTER}" | tee -a /var/lib/datastax-agent/conf/addre
 #----------------------------------------------------------------------------------------------------------#
 sed -i 's/#MAX_HEAP_SIZE="4G"/MAX_HEAP_SIZE="16G"/' /etc/dse/cassandra/cassandra-env.sh
 sed -i 's/#HEAP_NEWSIZE="800M"/HEAP_NEWSIZE="1G"/' /etc/dse/cassandra/cassandra-env.sh
+
 #----------------------------------------------------------------------------------------------------------#
 # Defaults: 
 #----------------------------------------------------------------------------------------------------------#
@@ -78,8 +77,7 @@ sed -i "s/127.0.0.1/$seeds/" /etc/dse/cassandra/cassandra.yaml
 sed -i 's/com.datastax.bdp.snitch.DseSimpleSnitch/GossipingPropertyFileSnitch/' /etc/dse/cassandra/cassandra.yaml
 sed -i "s/localhost/$PRIVATE_IP/" /etc/dse/cassandra/cassandra.yaml
 sed -i "s/dc1/$data_center/" /etc/dse/cassandra/cassandra-rackdc.properties
-#----------------------------------------------------------------------------------------------------------#
-chown -R cassandra:cassandra /var/lib/cassandra
+
 #----------------------------------------------------------------------------------------------------------#
 # Add Cassanra Aliases
 #----------------------------------------------------------------------------------------------------------#
@@ -89,6 +87,7 @@ alias cqlsh='cqlsh $(hostname -I)'
 alias log1='tail -100f /var/log/cassandra/output.log'
 alias log2='tail -100f /var/log/cassandra/system.log'
 EOM
+
 #----------------------------------------------------------------------------------------------------------#
 # Start All Services
 #----------------------------------------------------------------------------------------------------------#
