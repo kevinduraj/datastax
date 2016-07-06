@@ -86,6 +86,7 @@ alias vi='vim'
 alias cqlsh='cqlsh $(hostname -I)'                                                                                                                                                                                           
 alias log1='tail -100f /var/log/cassandra/output.log'
 alias log2='tail -100f /var/log/cassandra/system.log'
+alias dser='systemctl restart dse.service && systemctl restart datastax-agent.service'
 EOM
 
 #----------------------------------------------------------------------------------------------------------#
