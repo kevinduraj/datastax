@@ -92,4 +92,10 @@ EOM
 # Start All Services
 #----------------------------------------------------------------------------------------------------------#
 service dse start
+systemctl enable datastax-agent.service
 service datastax-agent start
+
+# systemctl start datastax-agent.service
+# systemctl stop datastax-agent.service
+# systemctl restart datastax-agent.service
+# systemctl disable datastax-agent.service
