@@ -63,8 +63,8 @@ echo "stomp_interface: ${OPSCENTER}" | tee -a /var/lib/datastax-agent/conf/addre
 #----------------------------------------------------------------------------------------------------------#
 # Memory: https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html
 #----------------------------------------------------------------------------------------------------------#
-sed -i 's/#MAX_HEAP_SIZE="4G"/MAX_HEAP_SIZE="16G"/' /etc/dse/cassandra/cassandra-env.sh
-sed -i 's/#HEAP_NEWSIZE="800M"/HEAP_NEWSIZE="1G"/' /etc/dse/cassandra/cassandra-env.sh
+sed -i 's/#MAX_HEAP_SIZE="4G"/MAX_HEAP_SIZE="12G"/' /etc/dse/cassandra/cassandra-env.sh
+sed -i 's/#HEAP_NEWSIZE="800M"/HEAP_NEWSIZE="4G"/' /etc/dse/cassandra/cassandra-env.sh
 
 #----------------------------------------------------------------------------------------------------------#
 # Defaults: 
