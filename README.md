@@ -1,10 +1,5 @@
 Install DataStax 
 ================
-
-DataStax Enterprise Installation
-================================
-
-
 ### Murmur3 Token Ranges
 * [generate-murmur3-token.sh](https://github.com/kevinduraj/dse-install/blob/master/generate-murmur3-token.sh)
 
@@ -15,6 +10,15 @@ $ python -c 'print [str(((2**64 / 3) * i) - 2**63) for i in range(3)]'
 $ python -c 'print [str(((2**64 / 5) * i) - 2**63) for i in range(5)]'
 ['-9223372036854775808', '-5534023222112865485', '-1844674407370955162', '1844674407370955161', '5534023222112865484']
 ```
+
+
+DataStax Community Installation
+===============================
+* [http://docs.datastax.com/en/cassandra/3.x/cassandra/install/installRHEL.html](http://docs.datastax.com/en/cassandra/3.x/cassandra/install/installRHEL.html)
+
+DataStax Enterprise Installation
+================================
+* [http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/install/installRHELdse.html](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/install/installRHELdse.html)
 
 ### DSE - /etc/default/dse
 
@@ -95,7 +99,7 @@ rack=RAC1
 
 
 ###Reference:
-* [http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/install/installRHELdse.html](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/install/installRHELdse.html)
+
 * [https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html](https://tobert.github.io/pages/als-cassandra-21-tuning-guide.html)
 
 
