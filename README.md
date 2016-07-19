@@ -29,13 +29,14 @@ vi /etc/default/dse
 ```
 vi  /etc/dse/cassandra/cassandra.yaml 
 
-cluster_name: 'Cluster1'
-num_tokens: 64 
+cluster_name: 'Cassandra Cluster'
+num_tokens: 32
 seed_provider:
   - class_name: org.apache.cassandra.locator.SimpleSeedProvider
     parameters:
-         - seeds:  "192.168.1.159,192.168.1.132,192.168.1.133"
-listen_address:
+         - seeds: "192.168.1.159,192.168.1.132,192.168.1.133"
+listen_address: 192.168.1.159
+rpc_address: 192.168.1.159
 endpoint_snitch: GossipingPropertyFileSnitch
 ```
 
